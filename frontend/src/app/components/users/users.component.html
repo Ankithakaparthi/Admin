@@ -1,0 +1,38 @@
+<div class="max-w-5xl mx-auto p-6">
+
+  <h1 class="text-2xl font-bold mb-6">Store Users</h1>
+
+  <div class="bg-white shadow rounded-xl overflow-hidden">
+
+    <table class="w-full text-left">
+      <thead class="bg-gray-100">
+        <tr>
+          <th class="p-3">Name</th>
+          <th class="p-3">Email</th>
+          <th class="p-3">Admin</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr
+          *ngFor="let user of users"
+          class="border-t hover:bg-gray-50 transition"
+        >
+          <td class="p-3">{{ user.name }}</td>
+          <td class="p-3">{{ user.email }}</td>
+          <td class="p-3">
+            <span
+              class="px-2 py-1 rounded text-sm"
+              [ngClass]="user.isAdmin ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-600'"
+            >
+              {{ user.isAdmin ? 'Admin' : 'User' }}
+            </span>
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>

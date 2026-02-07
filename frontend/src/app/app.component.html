@@ -1,0 +1,45 @@
+<nav class="flex items-center justify-between px-6 py-3 bg-gray-900 text-white">
+
+  <div class="text-xl font-semibold">
+    My Account
+  </div>
+
+  <div *ngIf="isLoggedIn()" class="flex items-center gap-6">
+    
+    <span>
+      👋 {{ user?.name }}
+    </span>
+
+    <button *ngIf="isAdmin()" class="cursor-pointer" (click)="toSales()">
+        Sales
+    </button>
+
+    <button *ngIf="isAdmin()" class="cursor-pointer" (click)="toUsers()">
+        Users
+    </button>
+
+    <button *ngIf="isAdmin()" class="cursor-pointer" (click)="toSignups()">
+        Signups
+    </button>
+
+    <button *ngIf="!isAdmin()" class="cursor-pointer" (click)="toStore()">
+        Store
+    </button>
+
+    <button *ngIf="!isAdmin()" class="cursor-pointer" (click)="toOrders()">
+        Orders
+    </button>
+
+    <button 
+      (click)="logout()"
+      class="bg-red-500 px-3 py-1 rounded hover:bg-red-600">
+      Logout
+    </button>
+
+  </div>
+
+</nav>
+
+<div class="p-4">
+  <router-outlet></router-outlet>
+</div>

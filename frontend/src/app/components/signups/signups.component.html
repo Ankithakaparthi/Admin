@@ -1,0 +1,72 @@
+<div class="max-w-7xl mx-auto p-6 space-y-6">
+
+  <div class="bg-white shadow-lg rounded-2xl p-6 border">
+    <h2 class="text-xl font-semibold text-gray-700">
+      Recent Signups
+    </h2>
+    <p class="text-sm text-gray-400">
+      Showing users from newest to oldest
+    </p>
+  </div>
+
+
+  <div *ngIf="loading" class="text-center text-gray-500 text-lg">
+    Loading users...
+  </div>
+
+  <div *ngIf="!loading" class="bg-white shadow-lg rounded-2xl overflow-hidden border">
+
+    <div class="overflow-x-auto">
+      <table class="min-w-full divide-y divide-gray-200">
+
+        <thead class="bg-gray-100">
+          <tr class="text-left text-sm font-semibold text-gray-600 uppercase">
+
+            <th class="px-6 py-4">User</th>
+            <th class="px-6 py-4">Email</th>
+            <th class="px-6 py-4">Role</th>
+            <th class="px-6 py-4">Signup Date</th>
+
+          </tr>
+        </thead>
+
+
+        <tbody class="divide-y divide-gray-100 text-sm text-gray-700">
+
+          <tr *ngFor="let user of users"
+              class="hover:bg-gray-50 transition">
+
+            <td class="px-6 py-4 font-semibold text-gray-800">
+              {{ user.name }}
+            </td>
+
+            <td class="px-6 py-4">
+              {{ user.email }}
+            </td>
+
+            <td class="px-6 py-4">
+              <span
+                class="px-3 py-1 rounded-full text-xs font-semibold"
+                [ngClass]="user.isAdmin
+                  ? 'bg-purple-100 text-purple-700'
+                  : 'bg-green-100 text-green-700'">
+
+                {{ user.isAdmin ? 'Admin' : 'User' }}
+
+              </span>
+            </td>
+
+            <td class="px-6 py-4 text-gray-500">
+              {{ user.createdAt | date:'medium' }}
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+    </div>
+
+  </div>
+
+</div>

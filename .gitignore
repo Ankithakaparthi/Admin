@@ -1,0 +1,48 @@
+# ----------------------------
+# Node Modules (Both Projects)
+# ----------------------------
+frontend/node_modules
+backend/node_modules
+
+# ----------------------------
+# Environment Variables
+# ----------------------------
+backend/.env
+backend/.env.*
+!.env.example
+
+# ----------------------------
+# Angular Build / Cache
+# ----------------------------
+frontend/dist
+frontend/.angular
+frontend/.cache
+frontend/out-tsc
+frontend/coverage
+
+# Angular IDE files
+frontend/.vscode
+frontend/.idea
+
+# ----------------------------
+# Backend Build / Logs
+# ----------------------------
+backend/dist
+backend/build
+backend/logs
+backend/*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ----------------------------
+# OS Files
+# ----------------------------
+.DS_Store
+Thumbs.db
+
+# ----------------------------
+# Misc
+# ----------------------------
+*.local
+*.tmp

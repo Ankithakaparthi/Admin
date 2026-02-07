@@ -1,0 +1,15 @@
+<div class="text-4xl text-center">Explore product categories</div>
+
+<div class="p-8">
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div
+        *ngFor="let cat of categories"
+        [routerLink]="['/store', cat]"
+        class="bg-white shadow rounded-xl p-6 text-2xl text-center cursor-pointer hover:shadow-lg"
+        >
+        {{ cat | titlecase }}
+        </div>
+    </div>
+
+</div>
